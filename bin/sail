@@ -1,0 +1,82 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+usage() {
+    echo "$0 [OPTIONS] <directory>"
+    echo ""
+    echo "-c   Return C files (default)"
+    echo "-cpp Return C++ files (default)"
+    echo "-h   Show usage information"
+}
+
+# Force UNIX find in case of Cygwin
+BINARY=/usr/bin/find
+
+C_PATTERNS='*.[hc]'
+CPP_PATTERNS='*.[hc]pp *.hh *.cc *.[hc]xx *.[hc]++'
+
+main() {
+    LANGUAGES="$1"
+    DIR="$2"
+
+    set --
+
+    for LANGUAGE in $LANGUAGES; do
+        case "$LANGUAGE" in
+        '-c')
+            eval "set -- $* $C_PATTERNS"
+            ;;
+        '-cpp')
+            eval "set -- $* $CPP_PATTERNS"
+            ;;
+        *)
+            usage
+            exit 1
+            ;;
+        esac
+    done
+
+    PARTS=''
+
+    while [ "$#" -gt 1 ]; do
+        PARTS="${PARTS}-iname $1 -o "
+        shift
+    done
+
+    PARTS="${PARTS}-iname $1"
+
+    eval "$BINARY $DIR -type f \( $PARTS \)"
+}
+
+if [ "$1" = "-h" ]; then
+    usage
+    exit
+fi
+
+LANGUAGES='-c -cpp'
+
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+    '-c')
+        LANGUAGES='-c'
+        shift
+        ;;
+    '-cpp')
+        LANGUAGES='-cpp'
+        shift
+        ;;
+    *)
+        break
+        ;;
+    esac
+done
+
+if [ "$#" -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+DIR="$1"
+
+main "$LANGUAGES" "$DIR"

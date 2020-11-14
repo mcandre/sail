@@ -1,0 +1,7 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+stank -exInterp zsh . |
+    grep -v node_modules |
+    xargs shellcheck
