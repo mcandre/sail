@@ -56,4 +56,4 @@ For more details on developing sail itself, see [DEVELOPMENT.md](DEVELOPMENT.md)
 
 # SEE ALSO
 
-* [stank](https://github.com/mcandre/stank)
+* [stank](https://github.com/mcandre/stank) identifies shell scripts.
