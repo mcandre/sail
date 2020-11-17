@@ -46,9 +46,26 @@ See `sail -h` for more detail.
 
 # NOTES
 
+sail examines merely the file extension, no effort is put into analyzing the contents for C/C++ grammar.
+
 (sp)lint has not been sufficiently maintained as of this writing to parse C89/99 or later syntax. Any application written in C is generally advised to use a more modern linter.
 
 Fortunately, C++ linters such as those listed above are able to handle both C and C++ code.
+
+Unfortunately, file extensions are overloaded with conflicting meanings. For example, `*.h` can refer to a C header, or a C++ header, or an Objective C header. And `.m` can refer to an Objective C implementation or a MATLAB / Octave implementation. Sending the wrong file to the wrong linter will produce incorrect results. Likewise, your text editor will often get confused.
+
+You can distinguish between these differing syntaxes by naming your headers:
+
+* C: `.h`
+* C++: `.hh`
+* Objective C / Objective C++: `.mhh`
+
+and your implementations:
+
+* C: `.c`
+* C++: `.cpp`
+* Objective C / Objective C++: `.mm`
+* MATLAB / Octave: `.m`
 
 # CONTRIBUTING
 
