@@ -26,6 +26,7 @@ examples/fizzy.hxx
 examples/hello.c++
 examples/hello.cc
 examples/fizzy.hh
+examples/fizzy.h++
 
 $ sail examples | xargs vera++
 examples/hello.cpp:1: no copyright notice found
@@ -46,7 +47,9 @@ See `sail -h` for more detail.
 
 # NOTES
 
-sail examines merely the file extension, no effort is put into analyzing the contents for C/C++ grammar.
+sail examines the file extension to assess programming language; no effort is put into analyzing the contents for C/C++ grammar or syntactic validity.
+
+Alternative formats including `.cu` (CUDA), `.sac` (Single Assignment C), `.mhh` / `.mm` (Objective C++), are ignored.
 
 (sp)lint has not been sufficiently maintained as of this writing to parse C89/99 or later syntax. Any application written in C is generally advised to use a more modern linter.
 
