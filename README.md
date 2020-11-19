@@ -11,25 +11,29 @@
 
 # ABOUT
 
-sail navigates through large pools of source code files, reeling in headers and implementations of C and C++ code, for downstream processing by static analyzers.
+sail navigates the seas of source code files, harvesting C/C++ headers and implementations for downstream processing. This is primarily of interest when linting large projects, when a static analyzer lacks built-in support for recursive file lookup.
 
 # EXAMPLES
 
 ```console
 $ sail examples
-examples/hello.c
-examples/fizzy.h
-examples/fizzy.HPP
-examples/hello.cpp
-examples/hello.CXX
-examples/fizzy.hxx
-examples/hello.c++
+examples/src/fizzy.h++
+examples/src/hello.c++
+examples/hello.mpp
 examples/hello.cc
-examples/fizzy.hh
-examples/fizzy.h++
+examples/lib/fizzy.tpp
+examples/lib/fizzy.h
+examples/lib/fizzy.ipp
+examples/lib/fizzy.inl
+examples/lib/fizzy.hh
+examples/hello.CXX
+examples/cmd/hello/hello.cpp
+examples/cmd/hello/hello.c
+examples/fizzy.HPP
+examples/fizzy.hxx
 
 $ sail examples | xargs vera++
-examples/hello.cpp:1: no copyright notice found
+examples/cmd/hello/hello.cpp:1: no copyright notice found
 ```
 
 See `sail -h` for more detail.
@@ -57,6 +61,8 @@ Only plain C, C++ source code files are reported by sail. The following alternat
 * Objective C++: `.mhh`, `.mm`
 * D: `.d`
 
+However, some historical conventions for unusual C/C++ header extensions may be supported, see the patterns listed in [bin/sail](https://github.com/mcandre/sail/blob/master/bin/sail).
+
 (sp)lint has not been sufficiently maintained as of this writing to parse C89/99 or later syntax. Any application written in C is generally advised to use a more modern linter.
 
 Fortunately, C++ linters such as those listed above are able to handle both C and C++ code.
@@ -75,6 +81,8 @@ and your implementations:
 * C++: `.cpp`
 * Objective C / Objective C++: `.mm`
 * MATLAB / Octave: `.m`
+
+Avoid using spaces in files or folders, as this generally presents difficulties for build systems.
 
 # CONTRIBUTING
 
