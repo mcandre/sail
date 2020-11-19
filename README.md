@@ -49,7 +49,13 @@ See `sail -h` for more detail.
 
 sail examines the file extension to assess programming language; no effort is put into analyzing the contents for C/C++ grammar or syntactic validity.
 
-Alternative formats including `.cu` (CUDA), `.sac` (Single Assignment C), `.mhh` / `.mm` (Objective C++), are ignored.
+Only plain C, C++ source code files are reported by sail. The following alternative formats are ignored:
+
+* C#: `.cs`
+* CUDA: `.cu`
+* Single Assignment C: `.sac`
+* Objective C++: `.mhh`, `.mm`
+* D: `.d`
 
 (sp)lint has not been sufficiently maintained as of this writing to parse C89/99 or later syntax. Any application written in C is generally advised to use a more modern linter.
 
