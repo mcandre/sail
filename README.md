@@ -20,7 +20,8 @@ $ sail examples
 examples/src/fizzy.h++
 examples/src/hello.c++
 examples/hello.mpp
-examples/hello.cc
+examples/include/hello.cc
+examples/include/fizzy.HPP
 examples/lib/fizzy.tpp
 examples/lib/fizzy.h
 examples/lib/fizzy.ipp
@@ -29,7 +30,6 @@ examples/lib/fizzy.hh
 examples/hello.CXX
 examples/cmd/hello/hello.cpp
 examples/cmd/hello/hello.c
-examples/fizzy.HPP
 examples/fizzy.hxx
 
 $ sail examples | xargs vera++
