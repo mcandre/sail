@@ -13,7 +13,7 @@ usage() {
 # Force UNIX find in case of Cygwin
 BINARY=/usr/bin/find
 
-C_PATTERNS='*.[ch] *.inl'
+C_PATTERNS='*.[ch] *.in[cl]'
 CPP_PATTERNS='*.[chimt]pp *.hh *.cc *.[ch]xx *.[ch]++'
 
 main() {

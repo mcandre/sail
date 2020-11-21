@@ -26,6 +26,7 @@ examples/lib/fizzy.tpp
 examples/lib/fizzy.h
 examples/lib/fizzy.ipp
 examples/lib/fizzy.inl
+examples/lib/fizzy.inc
 examples/lib/fizzy.hh
 examples/hello.CXX
 examples/cmd/hello/hello.cpp
