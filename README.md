@@ -17,21 +17,23 @@ sail navigates the seas of source code files, harvesting C/C++ headers and imple
 
 ```console
 $ sail examples
-examples/src/fizzy.h++
-examples/src/hello.c++
-examples/hello.mpp
-examples/include/hello.cc
+examples/cmd/hello/hello.c
+examples/cmd/hello/hello.cpp
+examples/fizzy.i++
+examples/fizzy.ii
 examples/include/fizzy.HPP
-examples/lib/fizzy.tpp
-examples/lib/fizzy.h
-examples/lib/fizzy.ipp
+examples/include/hello.cc
+examples/hello.mpp
+examples/hello.CXX
+examples/fizzy.hxx
 examples/lib/fizzy.inl
 examples/lib/fizzy.inc
+examples/lib/fizzy.h
+examples/lib/fizzy.tpp
+examples/lib/fizzy.ipp
 examples/lib/fizzy.hh
-examples/hello.CXX
-examples/cmd/hello/hello.cpp
-examples/cmd/hello/hello.c
-examples/fizzy.hxx
+examples/src/hello.c++
+examples/src/fizzy.h++
 
 $ sail examples | xargs vera++
 examples/cmd/hello/hello.cpp:1: no copyright notice found

@@ -14,7 +14,7 @@ usage() {
 BINARY=/usr/bin/find
 
 C_PATTERNS='*.[ch] *.in[cl]'
-CPP_PATTERNS='*.[chimt]pp *.hh *.cc *.[ch]xx *.[ch]++'
+CPP_PATTERNS='*.[chimt]pp *.cc *.hh *.ii *.[ch]xx *.[chi]++'
 
 main() {
     LANGUAGES="$1"
