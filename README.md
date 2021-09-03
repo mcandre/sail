@@ -93,4 +93,5 @@ For more details on developing sail itself, see [DEVELOPMENT.md](DEVELOPMENT.md)
 
 # SEE ALSO
 
-* [stank](https://github.com/mcandre/stank) identifies shell scripts.
+* [rez](https://github.com/mcandre/rez), a C/C++ task runner
+* [stank](https://github.com/mcandre/stank), a collection of POSIX-y shell linters
