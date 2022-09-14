@@ -6,6 +6,10 @@
 * [stank](https://github.com/mcandre/stank)
 * [vast](https://github.com/mcandre/vast)
 
+## Recommended
+
+* [ASDF](https://asdf-vm.com/) 0.10
+
 # BUILD: LINT + TEST
 
 ```console
