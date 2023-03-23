@@ -1,4 +1,4 @@
 #!/bin/sh
 unset IFS
 set -euf
-funk .
+yamllint -s .yamllint .

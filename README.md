@@ -43,20 +43,21 @@ See `sail -h` for more detail.
 
 # RUNTIME REQUIREMENTS
 
-* [coreutils](https://www.gnu.org/software/coreutils/)
+* an [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
 * [findutils](https://www.gnu.org/software/findutils/)
 
 ## Recommended
 
 * [cppcheck](http://cppcheck.sourceforge.net/)
 * [cpplint](https://github.com/cpplint/cpplint)
-* [vera++](https://bitbucket.org/verateam/vera/wiki/Home)
+* [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
+* [clang-tidy](https://clang.llvm.org/extra/clang-tidy/)
 
 # NOTES
 
 sail examines the file extension to assess programming language; no effort is put into analyzing the contents for C/C++ grammar or syntactic validity.
 
-Only plain C, C++ source code files are reported by sail. The following alternative formats are ignored:
+Only plain C, C++ source code files are reported by sail. The following related formats are ignored:
 
 * C#: `.cs`
 * CUDA: `.cu`

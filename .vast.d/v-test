@@ -1,0 +1,15 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+DIR="${0%/*}"
+PATH="${DIR}/../bin:${PATH}"
+cd "${DIR}/../examples"
+
+sail . |
+    xargs -n 1 cpplint
+
+sail -c .
+sail -cpp .
+sail -c -cpp .
+sail -h

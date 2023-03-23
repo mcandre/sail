@@ -2,5 +2,5 @@
 unset IFS
 set -euf
 
-ilint
-itest
+v-lint
+v-test
