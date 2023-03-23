@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export vast_tasks="build \
-    lint \
+    ilint \
     v-shfmt \
     v-bashate \
     v-shellcheck \
