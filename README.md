@@ -43,8 +43,8 @@ See `sail -h` for more detail.
 
 # RUNTIME REQUIREMENTS
 
-* an [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
-* [findutils](https://www.gnu.org/software/findutils/)
+* a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
+* GNU compatible [findutils](https://www.gnu.org/software/findutils/)
 
 ## Recommended
 
