@@ -7,6 +7,7 @@ export vast_tasks='
     v-shellcheck
     v-shfmt
     v-funk
+    v-slick
     v-yamllint
     v-test
 '
