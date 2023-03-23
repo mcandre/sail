@@ -35,8 +35,8 @@ examples/lib/fizzy.hh
 examples/src/hello.c++
 examples/src/fizzy.h++
 
-$ sail examples | xargs vera++
-examples/cmd/hello/hello.cpp:1: no copyright notice found
+$ sail examples | xargs -n 1 cpplint
+examples/cmd/hello/hello.c:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 ```
 
 See `sail -h` for more detail.
