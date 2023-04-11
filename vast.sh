@@ -8,7 +8,6 @@ export vast_tasks='
     v-shfmt
     v-funk
     v-slick
-    v-yamllint
     v-test
 '
 
