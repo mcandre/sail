@@ -7,7 +7,7 @@ PATH="${DIR}/../bin:${PATH}"
 cd "${DIR}/../examples"
 
 sail . |
-    xargs -n 1 cpplint
+    xargs -n 1 clang-format
 
 sail -c .
 sail -cpp .
