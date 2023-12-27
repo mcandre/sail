@@ -11,7 +11,7 @@
 
 ## Recommended
 
-* [ASDF](https://asdf-vm.com/) 0.10
+* [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
 * [direnv](https://direnv.net/) 2
 
 # BUILD: LINT + TEST
