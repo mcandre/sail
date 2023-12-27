@@ -40,6 +40,10 @@ $ sail examples | xargs -n 1 clang-format
 
 See `sail -h` for more detail.
 
+# LICENSE
+
+BSD-2-Clause
+
 # RUNTIME REQUIREMENTS
 
 * a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
