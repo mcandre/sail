@@ -1,13 +1,13 @@
 # BUILDTIME REQUIREMENTS
 
 * a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/) / [macOS](https://www.apple.com/macos) / [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) / etc.
+* a POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html) implementation (e.g. GNU make, BSD make, etc.)
 * [GNU findutils](https://www.gnu.org/software/findutils/)
 * [GNU grep](https://www.gnu.org/software/grep/)
-* [vast](https://github.com/mcandre/vast) 0.0.1
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
 * [Go](https://golang.org/) 1.20.2+
 * [Python](https://www.python.org/) 3.11.2+
-* Provision additional dev tools with `./install`
+* Provision additional dev tools with `make -f install.mk`
 
 ## Recommended
 
@@ -17,17 +17,17 @@
 # BUILD: LINT + TEST
 
 ```console
-$ vast [v-build]
+$ make
 ```
 
 # LINT
 
 ```console
-vast v-lint
+$ make lint
 ```
 
 # TEST
 
 ```console
-$ vast v-test
+$ make test
 ```
