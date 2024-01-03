@@ -11,6 +11,7 @@ jobs:
     steps:
     - run: "echo \"/usr/local/go/bin\" >> $GITHUB_PATH"
     - run: "echo \"${GOPATH}/bin\" >> $GITHUB_PATH"
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >> $GITHUB_PATH"
     - uses: "actions/checkout@v4"
     - run: "sudo apt-get install -y cargo make wget"
     - run: "wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz"
