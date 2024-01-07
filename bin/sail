@@ -5,9 +5,10 @@ set -euf
 usage() {
     echo "$0 [OPTIONS] <directory> [<directory> [<directory> ...]]"
     echo ""
-    echo "-c   Return C files (default)"
-    echo "-cpp Return C++ files (default)"
-    echo "-h   Show usage information"
+    echo "-c      Return C files (default)"
+    echo "-cpp    Return C++ files (default)"
+    echo "-print0 Delimit file paths with null terminator"
+    echo "-h      Show usage information"
 }
 
 # Force UNIX find in case of Cygwin
@@ -15,6 +16,8 @@ BINARY=/usr/bin/find
 
 C_PATTERNS='*.[ch] *.in[cl]'
 CPP_PATTERNS='*.[chimt]pp *.cc *.hh *.ii *.[ch]xx *.[chi]++'
+
+PRINT='-print'
 
 main() {
     LANGUAGES="$1"
@@ -49,7 +52,7 @@ main() {
     PARTS="${PARTS}-iname $1"
 
     for DIR in $DIRS; do
-        eval "$BINARY $DIR -type f \( $PARTS \)"
+        eval "$BINARY $DIR -type f \( $PARTS \) $PRINT"
     done
 }
 
@@ -73,6 +76,10 @@ while [ "$#" -gt 0 ]; do
         ;;
     '-cpp')
         LANGUAGES='-cpp'
+        shift
+        ;;
+    '-print0')
+        PRINT='-print0'
         shift
         ;;
     *)

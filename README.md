@@ -35,7 +35,7 @@ examples/lib/fizzy.hh
 examples/src/hello.c++
 examples/src/fizzy.h++
 
-$ sail examples | xargs -n 1 clang-format
+$ sail -print0 examples | xargs -0 -n 1 clang-format
 ```
 
 See `sail -h` for more detail.
@@ -46,7 +46,7 @@ BSD-2-Clause
 
 # RUNTIME REQUIREMENTS
 
-* POSIX compatible [findutils](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html)
+* GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 
 ## Recommended
