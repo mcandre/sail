@@ -1,34 +1,26 @@
 # BUILDTIME REQUIREMENTS
 
-* a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/) / [macOS](https://www.apple.com/macos) / [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) / etc.
-* a POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html) implementation (e.g. GNU make, BSD make, etc.)
-* [GNU findutils](https://www.gnu.org/software/findutils/)
-* [GNU grep](https://www.gnu.org/software/grep/)
-* [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
+* POSIX compatible [findutils](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html)
+* POSIX compatible [grep](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html)
+* POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [Go](https://golang.org/) 1.21.5+
 * [Python](https://www.python.org/) 3.12.1+
-* [Rust](https://www.rust-lang.org/) 1.75.0+
-* Provision additional dev tools with `make -f install.mk`
+* [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
+* Provision additional dev tools with `./install`
 
 ## Recommended
 
 * [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
 * [direnv](https://direnv.net/) 2
 
-# BUILD: LINT + TEST
+# AUDIT
 
 ```console
-$ make
+$ ./build audit
 ```
 
 # LINT
 
 ```console
-$ make lint
-```
-
-# TEST
-
-```console
-$ make test
+$ ./build [lint]
 ```

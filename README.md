@@ -46,8 +46,8 @@ BSD-2-Clause
 
 # RUNTIME REQUIREMENTS
 
-* a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
-* GNU compatible [findutils](https://www.gnu.org/software/findutils/)
+* POSIX compatible [findutils](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html)
+* POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 
 ## Recommended
 
