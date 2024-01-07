@@ -2,7 +2,6 @@
 
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * [Go](https://golang.org/) 1.21.5+
-* POSIX compatible [grep](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html)
 * [Python](https://www.python.org/) 3.12.1+
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
