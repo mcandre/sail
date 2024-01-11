@@ -97,5 +97,6 @@ For more details on developing sail itself, see [DEVELOPMENT.md](DEVELOPMENT.md)
 
 # SEE ALSO
 
+* [kirill](https://github.com/mcandre/kirill), a JSON file finder
 * [rez](https://github.com/mcandre/rez), a C/C++ task runner
 * [stank](https://github.com/mcandre/stank), a collection of POSIX-y shell linters
