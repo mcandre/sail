@@ -19,11 +19,13 @@ sail navigates the seas of source code files, harvesting C/C++ headers and imple
 $ sail examples
 examples/cmd/hello/hello.c
 examples/cmd/hello/hello.cpp
+examples/square.cppm
 examples/lib/fizzy.h
 
 $ sail -print0 examples | xargs -0 -n 1 wc -l
        7 examples/cmd/hello/hello.c
        6 examples/cmd/hello/hello.cpp
+       3 examples/square.cppm
        8 examples/lib/fizzy.h
 ```
 
@@ -52,8 +54,8 @@ sail examines the file extension to assess programming language; no effort is pu
 
 Only modern, lowercase file extensions are reported by sail:
 
-* C: `.h`, `.c`
-* C++: `.hpp`, `.cpp`
+* C: `.h` (headers), `.c` (implementations)
+* C++: `.hpp` (headers), `.cpp` (implementations), `.cppm` (modules)
 
 If sail doesn't find your C/C++ file, then it may not strictly a C/C++ file (such as an Arduino programming language extension). More likely, the file is simply using a vintage file extension, which can play havoc with syntax highlighting and linting.
 

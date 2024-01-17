@@ -10,6 +10,7 @@ usage() {
     echo "-c      Emit all C files (default)"
     echo "-hpp    Emit C++ header files"
     echo "-cppsrc Emit C++ implementation files"
+    echo "-cppm   Emit C++ modules"
     echo "-cpp    Emit all C++ files"
     echo "-hxx    Emit C and C++ header files"
     echo "-cxxsrc Emit C and C++ implementation files"
@@ -27,11 +28,12 @@ C_PATTERNS="${C_HEADER_PATTERNS} ${C_IMPLEMENTATION_PATTERNS}"
 
 CPP_HEADER_PATTERNS='*.hpp'
 CPP_IMPLEMENTATION_PATTERNS='*.cpp'
-CPP_PATTERNS="${CPP_HEADER_PATTERNS} ${CPP_IMPLEMENTATION_PATTERNS}"
+CPP_MODULE_PATTERNS='*.cppm'
+CPP_PATTERNS="${CPP_HEADER_PATTERNS} ${CPP_IMPLEMENTATION_PATTERNS} ${CPP_MODULE_PATTERNS}"
 
 CXX_HEADER_PATTERNS="${C_HEADER_PATTERNS} ${CPP_HEADER_PATTERNS}"
 CXX_IMPLEMENTATION_PATTERNS="${C_IMPLEMENTATION_PATTERNS} ${CPP_IMPLEMENTATION_PATTERNS}"
-CXX_PATTERNS="${CXX_HEADER_PATTERNS} ${CXX_IMPLEMENTATION_PATTERNS}"
+CXX_PATTERNS="${CXX_HEADER_PATTERNS} ${CXX_IMPLEMENTATION_PATTERNS} ${CPP_MODULE_PATTERNS}"
 
 PRINT='-print'
 
@@ -59,6 +61,9 @@ main() {
             ;;
         '-cppsrc')
             eval "set -- $* $CPP_IMPLEMENTATION_PATTERNS"
+            ;;
+        '-cppm')
+            eval "set -- $* $CPP_MODULE_PATTERNS"
             ;;
         '-cpp')
             eval "set -- $* $CPP_PATTERNS"
@@ -125,6 +130,10 @@ while [ "$#" -gt 0 ]; do
         ;;
     '-cppsrc')
         LANGUAGES='-cppsrc'
+        shift
+        ;;
+    '-cppm')
+        LANGUAGES='-cppm'
         shift
         ;;
     '-cpp')
