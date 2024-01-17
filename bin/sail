@@ -5,17 +5,33 @@ set -euf
 usage() {
     echo "$0 [OPTIONS] <directory> [<directory> [<directory> ...]]"
     echo ""
-    echo "-c      Return C files (default)"
-    echo "-cpp    Return C++ files (default)"
+    echo "-h      Emit C header files"
+    echo "-csrc   Emit C implementation files"
+    echo "-c      Emit all C files (default)"
+    echo "-hpp    Emit C++ header files"
+    echo "-cppsrc Emit C++ implementation files"
+    echo "-cpp    Emit all C++ files"
+    echo "-hxx    Emit C and C++ header files"
+    echo "-cxxsrc Emit C and C++ implementation files"
+    echo "-cxx    Emit all C and C++ files (default)"
     echo "-print0 Delimit file paths with null terminator"
-    echo "-h      Show usage information"
+    echo "-help   Show usage information"
 }
 
 # Force UNIX find in case of Cygwin
 BINARY=/usr/bin/find
 
-C_PATTERNS='*.[ch] *.in[cl]'
-CPP_PATTERNS='*.[chimt]pp *.cc *.hh *.ii *.[ch]xx *.[chi]++'
+C_HEADER_PATTERNS='*.h'
+C_IMPLEMENTATION_PATTERNS='*.c'
+C_PATTERNS="${C_HEADER_PATTERNS} ${C_IMPLEMENTATION_PATTERNS}"
+
+CPP_HEADER_PATTERNS='*.hpp'
+CPP_IMPLEMENTATION_PATTERNS='*.cpp'
+CPP_PATTERNS="${CPP_HEADER_PATTERNS} ${CPP_IMPLEMENTATION_PATTERNS}"
+
+CXX_HEADER_PATTERNS="${C_HEADER_PATTERNS} ${CPP_HEADER_PATTERNS}"
+CXX_IMPLEMENTATION_PATTERNS="${C_IMPLEMENTATION_PATTERNS} ${CPP_IMPLEMENTATION_PATTERNS}"
+CXX_PATTERNS="${CXX_HEADER_PATTERNS} ${CXX_IMPLEMENTATION_PATTERNS}"
 
 PRINT='-print'
 
@@ -29,11 +45,32 @@ main() {
 
     for LANGUAGE in $LANGUAGES; do
         case "$LANGUAGE" in
+        '-h')
+            eval "set -- $* $C_HEADER_PATTERNS"
+            ;;
+        '-csrc')
+            eval "set -- $* $C_IMPLEMENTATION_PATTERNS"
+            ;;
         '-c')
             eval "set -- $* $C_PATTERNS"
             ;;
+        '-hpp')
+            eval "set -- $* $CPP_HEADER_PATTERNS"
+            ;;
+        '-cppsrc')
+            eval "set -- $* $CPP_IMPLEMENTATION_PATTERNS"
+            ;;
         '-cpp')
             eval "set -- $* $CPP_PATTERNS"
+            ;;
+        '-hxx')
+            eval "set -- $* $CXX_HEADER_PATTERNS"
+            ;;
+        '-cxxsrc')
+            eval "set -- $* $CXX_IMPLEMENTATION_PATTERNS"
+            ;;
+        '-cxx')
+            eval "set -- $* $CXX_PATTERNS"
             ;;
         *)
             usage
@@ -45,11 +82,11 @@ main() {
     PARTS=''
 
     while [ "$#" -gt 1 ]; do
-        PARTS="${PARTS}-iname $1 -o "
+        PARTS="${PARTS}-name $1 -o "
         shift
     done
 
-    PARTS="${PARTS}-iname $1"
+    PARTS="${PARTS}-name $1"
 
     for DIR in $DIRS; do
         eval "$BINARY $DIR -type f \( $PARTS \) $PRINT"
@@ -61,21 +98,49 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-help" ]; then
     usage
     exit
 fi
 
-LANGUAGES='-c -cpp'
+LANGUAGES='-cxx'
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
+    '-h')
+        LANGUAGES='-h'
+        shift
+        ;;
+    '-csrc')
+        LANGUAGES='-csrc'
+        shift
+        ;;
     '-c')
         LANGUAGES='-c'
         shift
         ;;
+    '-hpp')
+        LANGUAGES='-hpp'
+        shift
+        ;;
+    '-cppsrc')
+        LANGUAGES='-cppsrc'
+        shift
+        ;;
     '-cpp')
         LANGUAGES='-cpp'
+        shift
+        ;;
+    '-hxx')
+        LANGUAGES='-hxx'
+        shift
+        ;;
+    '-cxxsrc')
+        LANGUAGES='-cxxsrc'
+        shift
+        ;;
+    '-cxx')
+        LANGUAGES='-cxx'
         shift
         ;;
     '-print0')

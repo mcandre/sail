@@ -19,26 +19,15 @@ sail navigates the seas of source code files, harvesting C/C++ headers and imple
 $ sail examples
 examples/cmd/hello/hello.c
 examples/cmd/hello/hello.cpp
-examples/fizzy.i++
-examples/fizzy.ii
-examples/include/fizzy.HPP
-examples/include/hello.cc
-examples/hello.mpp
-examples/hello.CXX
-examples/fizzy.hxx
-examples/lib/fizzy.inl
-examples/lib/fizzy.inc
 examples/lib/fizzy.h
-examples/lib/fizzy.tpp
-examples/lib/fizzy.ipp
-examples/lib/fizzy.hh
-examples/src/hello.c++
-examples/src/fizzy.h++
 
-$ sail -print0 examples | xargs -0 -n 1 clang-format
+$ sail -print0 examples | xargs -0 -n 1 wc -l
+       7 examples/cmd/hello/hello.c
+       6 examples/cmd/hello/hello.cpp
+       8 examples/lib/fizzy.h
 ```
 
-See `sail -h` for more detail.
+See `sail -help` for more detail.
 
 # LICENSE
 
@@ -51,14 +40,22 @@ BSD-2-Clause
 
 ## Recommended
 
-* [cppcheck](http://cppcheck.sourceforge.net/)
-* [cpplint](https://github.com/cpplint/cpplint)
 * [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
 * [clang-tidy](https://clang.llvm.org/extra/clang-tidy/)
+* [cmake](https://cmake.org/)
+* [cppcheck](http://cppcheck.sourceforge.net/)
+* [cpplint](https://github.com/cpplint/cpplint)
 
 # NOTES
 
 sail examines the file extension to assess programming language; no effort is put into analyzing the contents for C/C++ grammar or syntactic validity.
+
+Only modern, lowercase file extensions are reported by sail:
+
+* C: `.h`, `.c`
+* C++: `.hpp`, `.cpp`
+
+If sail doesn't find your C/C++ file, then it may not strictly a C/C++ file (such as an Arduino programming language extension). More likely, the file is simply using a vintage file extension, which can play havoc with syntax highlighting and linting.
 
 Only plain C, C++ source code files are reported by sail. The following related formats are ignored:
 
@@ -76,18 +73,16 @@ Fortunately, C++ linters such as those listed above are able to handle both C an
 
 Unfortunately, file extensions are overloaded with conflicting meanings. For example, `*.h` can refer to a C header, or a C++ header, or an Objective C header. And `.m` can refer to an Objective C implementation or a MATLAB / Octave implementation. Sending the wrong file to the wrong linter will produce incorrect results. Likewise, your text editor will often get confused.
 
-You can distinguish between these differing syntaxes by naming your headers:
+You can distinguish between these differing syntaxes by naming your headers with modern, convential file extensions.
 
-* C: `.h`
-* C++: `.hh`
 * Objective C / Objective C++: `.mhh`
 
 and your implementations:
 
-* C: `.c`
-* C++: `.cpp`
 * Objective C / Objective C++: `.mm`
 * MATLAB / Octave: `.m`
+
+Yet more fringe file extensions exist. For example, `.ino` files (Arduino extensions to C++), and `.inc` files (legacy headers used by a variety of different programming languages). These files may not process reliably when submitted to automated linters.
 
 Avoid using spaces in files or folders, as this generally presents difficulties for build systems.
 
