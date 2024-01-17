@@ -29,6 +29,8 @@ $ sail -print0 examples | xargs -0 -n 1 wc -l
        8 examples/lib/fizzy.h
 ```
 
+sail can also restrict results to just C files, or just C++ files. This helps when working with linters that may only be relevant for one programming language or the other.
+
 See `sail -help` for more detail.
 
 # LICENSE
