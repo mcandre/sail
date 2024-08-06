@@ -7,7 +7,7 @@ usage() {
     echo ""
     echo "-h      Emit C header files"
     echo "-csrc   Emit C implementation files"
-    echo "-c      Emit all C files (default)"
+    echo "-c      Emit all C files"
     echo "-hpp    Emit C++ header files"
     echo "-cppsrc Emit C++ implementation files"
     echo "-cppm   Emit C++ modules"
