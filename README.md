@@ -11,7 +11,7 @@
 
 # ABOUT
 
-sail navigates the seas of source code files, harvesting C/C++ headers and implementations for downstream processing. This is primarily of interest when linting large projects, when a static analyzer lacks built-in support for recursive file lookup.
+sail navigates the roiling seas of source code files, catching C/C++ headers and implementations for downstream processing. This is primarily of interest when linting large projects, when a static analyzer lacks built-in support for recursive file lookup.
 
 # EXAMPLES
 
