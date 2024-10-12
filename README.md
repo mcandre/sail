@@ -50,6 +50,14 @@ BSD-2-Clause
 * [cppcheck](http://cppcheck.sourceforge.net/)
 * [cpplint](https://github.com/cpplint/cpplint)
 
+# INSTALL
+
+Add .../sail/bin to `PATH`.
+
+# UNINSTALL
+
+Remove .../sail/bin from `PATH`.
+
 # NOTES
 
 sail examines the file extension to assess programming language; no effort is put into analyzing the contents for C/C++ grammar or syntactic validity.
