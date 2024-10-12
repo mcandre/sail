@@ -40,6 +40,7 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
+* [git](https://git-scm.com/) 2.46.1+
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 
 ## Recommended
@@ -52,11 +53,37 @@ BSD-2-Clause
 
 # INSTALL
 
-Add .../sail/bin to `PATH`.
+1. Clone the project to a local directory.
+
+```console
+$ git clone https://github.com/mcandre/sail.git ~/sail
+```
+
+2. Add .../sail/bin to `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+export PATH="$PATH:$HOME/sail/bin"
+```
 
 # UNINSTALL
 
-Remove .../sail/bin from `PATH`.
+1. Remove .../sail/bin from `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+```
+
+2. Remove local clone directory.
+
+```console
+$ rm -rf ~/sail
+```
+
 
 # NOTES
 
