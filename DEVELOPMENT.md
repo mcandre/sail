@@ -6,7 +6,7 @@
 * [Python](https://www.python.org/) 3.12.1+
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [Snyk](https://snyk.io/)
-* [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
+* [ShellCheck](https://www.shellcheck.net/) 0.10.0+
 * Provision additional dev tools with `./install`
 
 ## Recommended
