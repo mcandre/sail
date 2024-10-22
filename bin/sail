@@ -2,7 +2,7 @@
 unset IFS
 set -euf
 
-SAIL_VERSION='0.0.3'
+SAIL_VERSION='0.0.4'
 
 usage() {
     echo "$0 [OPTIONS] <directory> [<directory> [<directory> ...]]"
