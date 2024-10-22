@@ -2,21 +2,28 @@
 unset IFS
 set -euf
 
+SAIL_VERSION='0.0.3'
+
 usage() {
     echo "$0 [OPTIONS] <directory> [<directory> [<directory> ...]]"
     echo ""
-    echo "-h      Emit C header files"
-    echo "-csrc   Emit C implementation files"
-    echo "-c      Emit all C files"
-    echo "-hpp    Emit C++ header files"
-    echo "-cppsrc Emit C++ implementation files"
-    echo "-cppm   Emit C++ modules"
-    echo "-cpp    Emit all C++ files"
-    echo "-hxx    Emit C and C++ header files"
-    echo "-cxxsrc Emit C and C++ implementation files"
-    echo "-cxx    Emit all C and C++ files (default)"
-    echo "-print0 Delimit file paths with null terminator"
-    echo "-help   Show usage information"
+    echo "-h\t\tEmit C header files"
+    echo "-csrc\t\tEmit C implementation files"
+    echo "-c\t\tEmit all C files"
+    echo "-hpp\t\tEmit C++ header files"
+    echo "-cppsrc\t\tEmit C++ implementation files"
+    echo "-cppm\t\tEmit C++ modules"
+    echo "-cpp\t\tEmit all C++ files"
+    echo "-hxx\t\tEmit C and C++ header files"
+    echo "-cxxsrc\t\tEmit C and C++ implementation files"
+    echo "-cxx\t\tEmit all C and C++ files (default)"
+    echo "-print0\t\tDelimit file paths with null terminator"
+    echo "-version\tShow version info"
+    echo "-help\t\tShow usage menu"
+}
+
+banner() {
+    echo "sail $SAIL_VERSION"
 }
 
 # Force UNIX find in case of Cygwin
@@ -78,6 +85,7 @@ main() {
             eval "set -- $* $CXX_PATTERNS"
             ;;
         *)
+            shift
             usage
             exit 1
             ;;
@@ -101,11 +109,6 @@ main() {
 if [ "$#" -lt 1 ]; then
     usage
     exit 1
-fi
-
-if [ "$1" = "-help" ]; then
-    usage
-    exit
 fi
 
 LANGUAGES='-cxx'
@@ -155,6 +158,16 @@ while [ "$#" -gt 0 ]; do
     '-print0')
         PRINT='-print0'
         shift
+        ;;
+    '-version')
+        shift
+        banner
+        exit
+        ;;
+    '-help')
+        shift
+        usage
+        exit
         ;;
     *)
         break
