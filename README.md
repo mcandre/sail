@@ -40,7 +40,7 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
+* [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [sh](https://en.wikipedia.org/wiki/Unix_shell)
 
 ## Recommended
 
@@ -49,6 +49,7 @@ BSD-2-Clause
 * [cmake](https://cmake.org/)
 * [cppcheck](http://cppcheck.sourceforge.net/)
 * [cpplint](https://github.com/cpplint/cpplint)
+* [zsh](https://www.zsh.org/)
 
 # INSTALL
 
