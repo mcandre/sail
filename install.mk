@@ -1,10 +1,7 @@
 .POSIX:
 .SILENT:
-.PHONY: \
-	all \
-	go \
-	python \
-	rust
+ALLTARGETS!=ls -a *
+.PHONY: $(ALLTARGETS)
 
 all: go python rust
 
