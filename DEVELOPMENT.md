@@ -1,7 +1,7 @@
 # BUILDTIME REQUIREMENTS
 
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* [Go](https://golang.org/) 1.24.4+
+* [Go](https://golang.org/) 1.24.5+
 * [git](https://git-scm.com/) 2.46.1+
 * [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [make](https://en.wikipedia.org/wiki/Make_(software))
 * [Python](https://www.python.org/) 3.13.5+
