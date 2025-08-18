@@ -4,7 +4,7 @@
 * [Go](https://golang.org/) 1.24.5+
 * [git](https://git-scm.com/) 2.46.1+
 * [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [make](https://en.wikipedia.org/wiki/Make_(software))
-* [Python](https://www.python.org/) 3.13.5+
+* [Python](https://www.python.org/) 3.13.7+
 * [Rust](https://www.rust-lang.org/) 1.87.0+
 * [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [sh](https://en.wikipedia.org/wiki/Unix_shell)
 * [Snyk](https://snyk.io/)
