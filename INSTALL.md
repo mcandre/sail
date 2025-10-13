@@ -22,7 +22,7 @@ $ git clone https://github.com/mcandre/sail.git "$HOME/sail"
 
 2. Add .../sail/bin to `PATH`.
 
-For example, `$HOME/.zshrc` (zsh):
+For example, `$HOME/.bashrc` (bash):
 
 ```sh
 # ...
@@ -33,7 +33,7 @@ export PATH="$PATH:$HOME/sail/bin"
 
 1. Remove .../sail/bin from `PATH`.
 
-For example, `$HOME/.zshrc` (zsh):
+For example, `$HOME/.bashrc` (bash):
 
 ```sh
 # ...

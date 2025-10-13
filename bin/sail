@@ -5,25 +5,25 @@ set -eufo pipefail
 SAIL_VERSION='0.0.4'
 
 usage() {
-    echo "$0 [OPTIONS] <directory> [<directory> [<directory> ...]]"
-    echo ""
-    echo "-h\t\tEmit C header files"
-    echo "-csrc\t\tEmit C implementation files"
-    echo "-c\t\tEmit all C files"
-    echo "-hpp\t\tEmit C++ header files"
-    echo "-cppsrc\t\tEmit C++ implementation files"
-    echo "-cppm\t\tEmit C++ modules"
-    echo "-cpp\t\tEmit all C++ files"
-    echo "-hxx\t\tEmit C and C++ header files"
-    echo "-cxxsrc\t\tEmit C and C++ implementation files"
-    echo "-cxx\t\tEmit all C and C++ files (default)"
-    echo "-print0\t\tDelimit file paths with null terminator"
-    echo "-version\tShow version info"
-    echo "-help\t\tShow usage menu"
+    printf "Usage: %s [OPTIONS] <directory> [<directory> [<directory> ...]]\n" "$0"
+    printf "\n"
+    printf -- "-h\t\tEmit C header files\n"
+    printf -- "-csrc\t\tEmit C implementation files\n"
+    printf -- "-c\t\tEmit all C files\n"
+    printf -- "-hpp\t\tEmit C++ header files\n"
+    printf -- "-cppsrc\t\tEmit C++ implementation files\n"
+    printf -- "-cppm\t\tEmit C++ modules\n"
+    printf -- "-cpp\t\tEmit all C++ files\n"
+    printf -- "-hxx\t\tEmit C and C++ header files\n"
+    printf -- "-cxxsrc\t\tEmit C and C++ implementation files\n"
+    printf -- "-cxx\t\tEmit all C and C++ files (default)\n"
+    printf -- "-print0\t\tDelimit file paths with null terminator\n"
+    printf -- "-version\tShow version info\n"
+    printf -- "-help\t\tShow usage menu\n"
 }
 
 banner() {
-    echo "sail $SAIL_VERSION"
+    printf "sail %s\n" "$SAIL_VERSION"
 }
 
 # Force UNIX find in case of Cygwin
