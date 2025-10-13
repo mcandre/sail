@@ -3,7 +3,7 @@
 * a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
 * [bash](https://www.gnu.org/software/bash/) 4+
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* [Go](https://golang.org/) 1.24.6+
+* [Go](https://golang.org/) 1.25.3+
 * [git](https://git-scm.com/) 2.46.1+
 * [Python](https://www.python.org/) 3.13.7+
 * [Snyk](https://snyk.io/)
