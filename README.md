@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Use Rust.
+
 # sail: Identify C/C++ source code files
 
 ```text
